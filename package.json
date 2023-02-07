@@ -1,0 +1,23 @@
+{
+  "name": "09-genmereadme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaynefw/09-genmeReadme.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shaynefw/09-genmeReadme/issues"
+  },
+  "homepage": "https://github.com/shaynefw/09-genmeReadme#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
