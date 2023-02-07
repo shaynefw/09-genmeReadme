@@ -25,8 +25,9 @@ inquirer.prompt([
     }
 ])
 .then((response) => {
-    fs.writeFile('log.txt', JSON.stringify(response), (err) => {
-        err ? console.error(err) : console.log('File created!');
+    const markdown = generateMarkdown(response)
+    fs.writeFile('README.md', markdown, (err) => {
+        err ? console.error(err) : console.log('README.md created successfully!');
     });
 });
 
