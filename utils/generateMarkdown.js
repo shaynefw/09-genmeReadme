@@ -58,8 +58,8 @@ ${data.description}
 
 ## Installation
 
-[Project repo](https://github.com/${data.githubUsername}/${data.repoName})
-[Project deployed link](https://${data.githubUsername}.github.io/${data.repoName}/)
+- [Project repo](https://github.com/${data.githubUsername}/${data.repoName})
+- [Project deployed link](https://${data.githubUsername}.github.io/${data.repoName}/)
 
 Additional steps: ${data.installation}
 

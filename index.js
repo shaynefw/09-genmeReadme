@@ -95,13 +95,18 @@ inquirer.prompt([
         type: 'input',
         message: 'What is your email address for people to contact you?'
     },
+    {
+        name: 'fileName',
+        type: 'input',
+        message: 'What do you want to call your readme? (just enter name not filetype):'
+    },
 ])
 // Handle the response from inquirer prompts
 .then((response) => {
     // Create markdown using the generateMarkdown function
     const markdown = generateMarkdown(response)
     // Write the markdown to a file named README.md
-    fs.writeFile('README.md', markdown, (err) => {
+    fs.writeFile(`${response.fileName}.md`, markdown, (err) => {
         // If there is an error, log the error message
         err ? console.error(err) : console.log('README.md created successfully!');
     });
