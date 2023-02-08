@@ -34,6 +34,7 @@ function renderLicenseSection(license) {
     const badge = renderLicenseBadge(license);
     const link = renderLicenseLink(license);
 
+    // Check if either badge or link is missing, if missing return an empty string otherwise display following string.
     return !badge || !link ? '' : `## License 
 
 This project is licensed under the ${license} license. You can find more information by clicking the following badge: ${badge}(${link}).`;
@@ -97,5 +98,5 @@ ${data.tests}
 If you have any questions you can reach me by email at ${data.email}.
 `;
 }
-
+// export the generateMarkdown function as a module that can be used in the index.
 module.exports = generateMarkdown;
