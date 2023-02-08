@@ -9,30 +9,85 @@ inquirer.prompt([
         message: 'Press any key to continue...'
     },
     {
-        name: 'Title',
+        name: 'repoName',
         type: 'input',
-        message: 'What is the title of your repo?'
+        message: 'What is the exact name of your repo?'
     },
     {
-        name: 'Description',
+        name: 'description',
         type: 'input',
-        message: 'Provide a short description.'
+        message: 'Provide a short description:'
     },
     {
-        name: 'Installation',
+        name: 'githubUsername',
+        type: 'input',
+        message: 'What is your case sensitive github username? (not email):'
+    },
+    {
+        name: 'installation',
         type: 'input',
         message: 'What are the steps required to install your project?'
     },
     {
-        name: 'Usage',
+        name: 'usage',
         type: 'input',
-        message: 'Provide instructions and examples for use.'
+        message: 'Provide instructions and examples for use:'
     },
     {
-        name: 'Credits',
+        name: 'usageImage',
         type: 'input',
-        message: 'List collaborators, third-party, tutorials'
-    }
+        message: 'What is the full file name of the screenshot in images folder? (i.e image-01.png)'
+    },
+    {
+        name: 'credits',
+        type: 'input',
+        message: 'List collaborators, third-party, tutorials:'
+    },
+    {
+        name: 'license',
+        type: 'list',
+        message: 'Please choose a license...',
+        choices: [
+            'MIT',
+            'Apache',
+            'GPL',
+        ]
+    },
+    {
+        name: 'htmlPercent',
+        type: 'input',
+        message: '% of html? (if none enter 0):'
+    },
+    {
+        name: 'cssPercent',
+        type: 'input',
+        message: '% of CSS? (if none enter 0):'
+    },
+    {
+        name: 'jsPercent',
+        type: 'input',
+        message: '% of JavaScript? (if none enter 0):'
+    },
+    {
+        name: 'features',
+        type: 'input',
+        message: 'What features does your project have?'
+    },
+    {
+        name: 'contribute',
+        type: 'input',
+        message: 'Explain how other devs can contribute. (if no contribution needed leave blank):'
+    },
+    {
+        name: 'tests',
+        type: 'input',
+        message: 'Explain how users can run tests. (if none leave blank):'
+    },
+    {
+        name: 'email',
+        type: 'input',
+        message: 'What is your email address for people to contact you?'
+    },
 ])
 .then((response) => {
     const markdown = generateMarkdown(response)

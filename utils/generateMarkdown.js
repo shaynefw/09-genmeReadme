@@ -3,11 +3,11 @@
 function renderLicenseBadge(license) {
     switch (license) {
         case 'MIT':
-            return '[![MIT](https://img.shields.io/badge/license-MIT-blue.svg)]'
+            return '[![MIT](https://img.shields.io/badge/license-MIT-blue.svg)]';
         case 'GNU':
-            return '[![GNU](https://img.shields.io/badge/license-GNU-green.svg)]'
+            return '[![GNU](https://img.shields.io/badge/license-GNU-green.svg)]';
         case 'Apache':
-            return '[![GPL](https://img.shields.io/badge/license-Apache-yellow.svg)]'
+            return '[![GPL](https://img.shields.io/badge/license-Apache-yellow.svg)]';
         default:
             return '';
     };
@@ -22,7 +22,9 @@ function renderLicenseLink(license) {
         case 'GNU':
             return 'https://opensource.org/licenses/GPL-3.0';
         case 'Apache':
-            return 'https://opensource.org/licenses/Apache-2.0'
+            return 'https://opensource.org/licenses/Apache-2.0';
+        default:
+            return '';
     };
 };
 
@@ -34,16 +36,16 @@ function renderLicenseSection(license) {
 
     return !badge || !link ? '' : `## License 
 
-This project is licensed under the ${license} license. You can find more information by clicking the following badge: [${badge}](${link}).`;
+This project is licensed under the ${license} license. You can find more information by clicking the following badge: ${badge}(${link}).`;
 };
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-    return `# ${data.Title}
+    return `# ${data.repoName}
 
 ## Description
 
-${data.Description}
+${data.description}
 
 ## Table of Contents
 
@@ -51,20 +53,48 @@ ${data.Description}
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
+- [Contact](#questions)
 
 ## Installation
 
-${data.Installation}
+[Project repo](https://github.com/${data.githubUsername}/${data.repoName})
+[Project deployed link](https://${data.githubUsername}.github.io/${data.repoName}/)
+
+Additional steps: ${data.installation}
 
 ## Usage
 
-${data.Usage}
+${data.usage}
+
+![screenShot](assets/images/${data.usageImage})
 
 ## Credits
 
-${data.Credits}
+${data.credits}
 
-${renderLicenseSection()}
+${renderLicenseSection(data.license)}
+
+## Badges
+
+![HTML](https://img.shields.io/badge/HTML-${data.htmlPercent}%25-orange)
+![CSS](https://img.shields.io/badge/CSS-${data.cssPercent}%25-blue)
+![JavaScript](https://img.shields.io/badge/JavaScript-${data.jsPercent}%25-yellow)
+
+## Features
+
+${data.features}
+
+## How to Contribute
+
+${data.contribute}
+
+## Tests
+
+${data.tests}
+
+## Questions
+
+If you have any questions you can reach me by email at ${data.email}.
 `;
 }
 
