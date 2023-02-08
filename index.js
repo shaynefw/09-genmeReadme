@@ -22,6 +22,16 @@ inquirer.prompt([
         name: 'Installation',
         type: 'input',
         message: 'What are the steps required to install your project?'
+    },
+    {
+        name: 'Usage',
+        type: 'input',
+        message: 'Provide instructions and examples for use.'
+    },
+    {
+        name: 'Credits',
+        type: 'input',
+        message: 'List collaborators, third-party, tutorials'
     }
 ])
 .then((response) => {
